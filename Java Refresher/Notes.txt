@@ -1,0 +1,245 @@
+class Student{
+byte age=1;   //globalscope
+
+void method1(){
+age=2;    //still in global scope
+system.out.println("inside method1.age=" +age);
+}
+void method2(){
+system.out.println("inside method2.age="+age);
+}
+}
+
+
+
+public static void main(String args[]){
+Student s=new Student();
+s.method1();  //changes age to 2
+s.method2();  //print 2
+
+}
+
+
+int i;
+float f1=24.5;
+void method3(){
+i=f1;  //compiletime error
+i=(int)f1  //type casting 
+system.out.println(i)
+}
+
+byte b;
+int i;
+
+i=b; //allow
+b=i; //not allow
+
+int i=40;
+int j=7;
+
+int k=i/j;
+int m=i%j;
+
+sop("k="+k);
+sop("m="+m);
+
+boolean result=i>=j;
+
+boolean b1=true;
+boolean b2=fasle;
+boolean res=b1 & b2;//f
+sop("res="+res);
+
+boolean res1=b1 && b2;
+sop("res1="+res1); //f
+
+int i1=7;  //00000000111
+int j1=i<<1;  //00000000011
+sop(Integer.toBinaryString(i1));
+sop(Integeer.toBinaryString(j1));
+
+j1= i1<<1;  //000000000000110
+sop(Integer.toBinaryString(j1));
+
+
+int i4=10;
+int i5[]={1,46,6};
+int z=i5[2];
+
+a*(j+s)/gt;  //(), *, /, +
+
+
+if(i4==10){
+sop("hello is true");
+}else{
+sop("hello is false");
+}else if(i>20){
+sop("hello is true");
+}
+
+//switch
+
+
+//while
+
+sop("demo");
+int p=10;
+while(p>=7){
+sop("inside.while p="+p);
+p--
+}
+
+
+do{
+
+}while(p>=7);
+
+for(int i=0)
+
+
+//return
+
+//Inheritance:::::::
+
+class Improve{
+String nationality;
+
+}
+
+super
+static 
+final
+abstract
+
+
+public abstract class apple{
+abstract  void method1();
+abstract void method2(int p, String q);
+void method3();
+sop("helo")
+}
+
+apple a =new apple();
+
+Interfaces:
+
+class Bank{
+int RateOfInterest();
+}
+
+class SBI implements Bank{
+int RateOfInterest(){
+return 9;
+}
+}
+class BOI implements Bank{
+int RateOfInterest(){
+return 7;
+}
+}
+
+public class A1{
+public static void main(String args[]){
+Bank b = new SBI();
+System.out,println("ROI:"+b.int RateOfInterest());
+}
+}
+
+}
+
+//SOLID principles::
+S-Single responcibility
+O-openclose
+L-List of substitution
+I-Interfaces
+D-Dependancy injection
+
+//Exception Handling::abnormal condition
+
+
+//Array::
+class Array{
+public static voic main(String args[]){
+int[]salaries;
+salaries =new int[5];
+
+salaries[0]=50000;
+salaries[1]=90000;
+salaries[2]=60000;
+salaries[3]=30000;
+salaries[4]=20000;
+
+}
+}
+
+sop("size of salaries array:"+salaries.length);
+for(int i=0; i<salaries langth;i++){
+sop(salaries[i]);
+}
+
+Arrays.sort(salaries);
+sop("sorted salaries");
+for(int i=0; i<salaries langth;i++){
+sop(salaries[i]);
+}
+
+
+//
+customer[] customer =new customer[4]
+customer[0] customer =new customer("n1","p1");
+customer[1] customer =new customer("n2","p2");
+customer[2] customer =new customer("n3","p3");
+customer[3] customer =new customer("n4","p4");
+
+
+//collection::
+colletion implements list
+list mylist= new colletion();
+
+colletionw();
+collectionw()=new collectionw();
+
+List::
+sop(**Collection Demo**);
+List<customer>mycustomer=new Arraylist();
+
+customer c1 = new customer("n1","p1");
+mycustomer.add(c1);
+
+customer c2 = new customer("n2","p2");
+mycustomer.add(c2);
+
+sop("mycustomer.size():"+mycustomer.size());
+sop("mycustomer.isempty:"+mycustomer.isempty());
+
+for(customer c:mycustomer){
+sop(c.name);
+}
+mycustomer.remove(0);
+sop("after removing the customer");
+for(customer c:mycustomer){
+sop(c.name);
+}
+
+//user defined exception
+//collection framework
+//list,set, map
+list<Customer>myCustomer=new ArrayList<>[];
+Customer[] custArray=myCustomer.toArray(new Customer[0]);
+
+Cutomer[] custArray1
+List<Customer>cust=Arrays.List(custArray1);
+
+Stack
+Queue-ArrayDeque
+JDBC=DriverManager-MYSQL,Oracle
+executeQuery(SELECT*CUSTOMER)
+exevuteUpdate (INSERT)
+Update---set age=where custId=1234
+
+
+
+
+
+
+
