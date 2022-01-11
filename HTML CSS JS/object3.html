@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel</title>
+    <header style="font-size: 24pt; color:white; background-color: black; text-align: center;">Hotel</header>
+    <div id="logger">Hotel</div>
+</head>
+<script>
+    var logg= document.getElementById("logger");
+    f = (ele) => alert(`Inside function f. ${ele} event `);
+    
+    
+    g = (evt) => logg.innerHTML = `Inside function g. ${evt} event` ;
+     
+     var i=0;
+    g1 = (evt) => logg.innerHTML =`Inside function g1. ${evt.target} is target ${i++} times `;
+    
+    g2 = (evt) => logg.innerHTML =`Inside function g2. ${evt.target.innerHTML}  is the content `;
+
+    remF =() =>{
+        document.getElementById("p2").removeEventListener("mouseover", g);
+        document.getElementById("p2").removeEventListener("mouseenter", g1);
+    };
+
+    imgEH1 = (evt) => `${evt.target.width=300} ${evt.target.height=300}`;
+    imgEH2 = (evt) => `${evt.target.width=120} ${evt.target.height=120}`;
+</script>
+<body>
+    <p id="p1" >Name</p>
+    <p>Address</p>
+    <p Email id="p2" style="border: 2px ridge red;display:inline">Email</pEmail></p>
+    <p>PhoneNo</p>
+
+    <div onmouseover="f('div');" style="border: 2px ridge orange; display:inline"> div 1</div>
+    <br> <br>
+    <button onclick="remF()"> button 1</button>
+    <br> <br>
+    <input id="t1" type="text" value="some text" />
+    <br> <br>
+
+    <img onclick="f('img');" style="border: 2px solid blue"
+     src="plant.jpg" height="120" width="120">
+    <a onclick="alert(` link clicked `);" href="http://www.hotel.com"> Go to Hotel </a>
+
+<script>
+    var para2 = document.getElementById("p2");
+    para2.addEventListener("mouseover", g);
+    para2.addEventListener("mouseenter", g1);
+    //para2.addEventListener("click", g1); // we can attach another EH for another type of event
+   // para2.addEventListener("mouseleave", g2);
+
+    document.getElementById("p1").addEventListener("click", g);
+    document.getElementById("t1").addEventListener("change", g);
+    
+    var arrOfPTags = document.getElementsByTagName("img");
+    for(imgTag of arrOfPTags){
+        imgTag.addEventListener("mouseover", imgEH1);  
+        imgTag.addEventListener("mouseout", imgEH2);  
+    }
+    
+
+</script>
+
+
+</body>
+
+</html>

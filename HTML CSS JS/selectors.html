@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        ul li{
+            color:green;
+            list-style:squre;
+        }
+
+        ul>li{
+            color:rgb(224,96,22);
+            list-style-type:upper-roman;
+        }
+
+        h3+p{
+            border:5px dotted;
+        }
+        h2~p{
+            border-bottom:2px dashed;
+        }
+
+
+    </style>
+
+    <body>
+        <p>the selector matches this paragraph 1.</p>
+        <h2>Heading</h2>
+        <p>The selector above matches this paragraph 2.</p>
+        <p>The selector does not matches 3.</p>
+
+        <p>the selector matches this paragraph 11.</p>
+        <h3>Heading 3</h3>
+        <p>The selector above matches this paragraph 12.</p>
+        <p>The selector does not matches 13.</p>
+    </body>
+
+    <ul>
+        <li>Team 1</li>
+        <li>
+            <ol>
+                <li>sub-item 2A</li>
+                <li>sub-item 2B</li>
+                </ol>
+                </li>
+                </ul>
+</html>

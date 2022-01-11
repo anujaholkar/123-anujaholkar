@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration form</title>
+
+</head>
+<body>
+<h1 align="center">Registration Form</h1>
+<fieldset align="center" height="50px" width="80%">
+<legend>Registration form</legend>
+<form>
+<div>
+<table align="center" border="8" style="border:5px groove blue; background-color:powderblue; color:brown;  width:30%;">
+<th>
+
+<tr><td><label>Name: </label></td>
+<td><input type="text" name="n1" autofocus></td>
+</tr>
+
+<tr><td><label>E-mail: </label></td>
+<td><input type="email" name="e1"></td>
+</tr>
+
+<tr><td><label>Address: </label></td>
+<td><textarea name="Address" rows="3" cols="10"></textarea></td></tr>
+</tr>
+
+<tr><td><label>DOB: </label></td>
+    
+<td><input type="date" name="d1"></td>
+</tr>
+
+<tr><td><label>checkin time:</label></td>
+    <td><input type="time" format="hh:mm:ss" name="scheduledtime" value="03:00:am" min="05:59:59"></td>
+
+       <tr><td><label>select a date to visit:</label>
+<td><input type="date" name="birthdaytime" value="2022-01-10" min="2022-01-10"></td>
+
+
+<p>Star Card with thresholds of hotel:</p>
+    <p>** <meter value="35" min="0" max="100" low="40">35 out of 100 (Yellow inOpera,FF )</meter></p>
+            <p>*** <meter value="0.76" high="60">76% (Green in Opera,FF )</meter></p>
+    <p>****<meter value="96" low="90" high="94" max="100">96% (Red in Opera,FF)</meter></p>
+
+
+<tr><td rowspan="2"><label>Gender: </label></td>
+<td><input type="radio" name="Gender">Male</td></tr>
+<tr><td><input type="radio" name="Gender">Female</td>
+</tr>
+
+<tr><td><label>Rooms: </label></td>
+<td><input type="checkbox" name="AC rooms" checked>AC rooms
+<input type="checkbox" name="NON-AC rooms">NON-AC rooms
+</td></tr> 
+
+
+
+<tr><td><label>Fcilities:</label></td>
+<td><select name="Fcilities">
+<option value="Parking">Parking
+<option value="Cab">Cab
+<option value="Swingming pool">Swing pool
+<option value="Dining Area">Dining Area
+</option>
+</select></td>
+
+
+<tr><td><label>Password: </label></td>
+<td><input type="password" name="p1"></td>
+</tr>
+
+<tr><td>Range type(select 1 to 10):</td>
+<td><input type="range" name="points" min="1" max="10"></td></tr>
+
+<tr><td><input type="Submit" value="Submit"></td>
+<td><input type="Reset" value="Reset"></td></tr>
+</div>
+</form>
+</fieldset>
+</body>
+</html>

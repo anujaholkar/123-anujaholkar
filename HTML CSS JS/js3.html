@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<HTML> //call backfunction
+    <script>
+        function discount(price,percentage){
+        return(price*percentage)/100;
+        }
+
+        function offer(price){
+         document.write(price/2);
+           return price/2;
+        }
+
+        function finalPrice(price,percentage,f,g){
+            if(price>50){
+                var k = f(price);
+            }else{
+                k =price;
+            }
+            
+            var o = g(k,percentage);
+            return o;
+        } 
+        
+        var f = finalPrice(50,20,offer,discount);
+        document.write("</br>final price of 50 and 20");
+
+        document.write(" "+f);
+        
+    </script>
+</HTML>

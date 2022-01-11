@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow function </title>
+</head>
+<script>
+    function f1(){
+        document.write('<hr>Inside f1<br>');
+    }
+
+    f1();
+        //some function using arrow notation.
+    f2= () => document.write('<hr>Inside f2<br>');
+    f2();
+
+    //arrow function that takes one parameter.
+    f3=(a)=>{document.write(`<hr>Inside f3 a is ${a}<br>`);};
+    f3(3);
+
+    //for 2 parameter
+    f4=(a,b)=>{document.write(`<hr>Inside f4 a is ${a},${b}<br>`);};
+    f4(5,"abc");
+
+    //2 parameter n return value
+    f5=(a,b)=>{return a+b;};
+    var val1 =f5(5,6);
+    {document.write(`<hr>addition value from  f5 is ${val1}<br>`);};
+
+    //2 paramter,has multiple stmt n return value
+    f6=(a,b)=>{
+        var c=a+b;
+        var d=2*c;
+        return d;
+    };
+    var val2=f6(15,23);
+    document.write(`<hr>addition value from  f6 is ${val2}<br>`);
+
+    f7=({price})=>document.write(`<hr>Inside f7 cars price is ${price}`);
+    var car1={
+        price:500,
+        color:"red",
+        weight:100
+    };
+    f7(car1);
+    //arrow function get accepts function n applies them on 2 a,b
+    f8=(a,b,f)=>f(a,b);
+    var val3=f8(10.15,f5);
+    document.write(`<hr>additional value from f8 using f5 is ${val3}</br>`);
+
+
+</script>
+
+<body>
+    <header style="font-size: 24pt; color:white; background-color: black; text-align: center;">Arrow function
+    </header>
+
+</body>
+</html>
+ 

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+            class Hotel{
+                constructor(){
+                    this.rooms="Non-AC";
+                    
+                }
+
+            }
+            class HotelA extends Hotel{
+                constructor(password,name,phoneNo,address,image){
+                    super();
+                    this.password;
+                    this.name;
+                    this.phoneNo;
+                    this.address;
+                    this.image;
+                }
+            }
+            display(){
+                document.write("</br>product number is: "+this.password); 
+                document.write("</br>product number is:"+this.name);
+                document.write("</br>product number is:"+this.phoneNo);
+                document.write("</br>product number is:"+this.address);
+                document.write("</br>product number is:"+this.image);
+            }
+        
+            var h1 = new HotelA(1,"anuja",123456,"banglore",image);
+            var h2 = new HotelA(2,"anuja",123456,"banglore",image);
+            var h3 = new HotelA(3,"anuja",123456,"banglore",image);
+            var h4 = new HotelA(4,"anuja",123456,"banglore",image);
+            var h5 = new HotelA(5,"anuja",123456,"banglore",image);
+            document.write(h1.password+" "+h1.name+" "+ h1.phoneNo+" "+h1.address+" "+h1.image+" "+h1.Non-AC);
+
+            h1.display();
+            h2.display();
+            h3.display();
+            h4.display();
+            h5.display();
+
+        </script>
+    </head>
+</html>

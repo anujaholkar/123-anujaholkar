@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head meta charset="utf-8"></head>
+    <script src="class.js"></script>
+    
+    <p id="myp1">100 </p>
+    <p>123</p>
+    <div>
+        <p>245</p>
+        <a href="http://www.flipcart.com"id="myA1">this is link to flipcart</a>
+
+    </div>
+    <button onclick="applyBorder();">Button</button>
+
+    <script>
+        var x=document.getElementById("myp1");
+        x.innerHTML="laptop";
+
+        var y=document.getElementById("myA1");
+       // alert(y.innerHTML);
+        y.innerHTML="this is link to flipcart";
+        
+        function applyBorder(){
+       var z= document.getElementsByTagName("p");
+      // alert("no of ptags in the web page is:${z.length}");
+
+       for(ele of z){
+          // alert(ele.trim());
+           if(ele.innerHTML()>200)
+       ele.style="border:3px solid black; width:80px;";
+       
+       };
+    }
+    </script>
+</html>

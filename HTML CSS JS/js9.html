@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-compatible" content="IE="edge>
+        <meta name="viewport" content="width=device-width, initial-sale=1.0">
+        <title>spread operator</title>
+    </head>
+    <script>
+        //var logger =document.getElementById("logger");
+    
+        function average(a,b,c){
+            return (a+b+c)/3;
+        }
+    
+        //logger.innerHTML = `<br>Average of 10 20 30 is ${average(10,20,30)}` ;
+        document.write(`<br>Average of 10 20 30 is ${average(10,20,30)}`);
+    
+        var arr1 =[10,5,6,7,7,78,27,45,25,26];
+        var arr1Avg =average(...arr1);
+    </script>
+    <body>
+        <header style="font-size:24pt; color:white; background-color:black; text-align:center;">Spread operator</header>
+            <div id="logger">Log statement here</div>
+    </body>
+</html>

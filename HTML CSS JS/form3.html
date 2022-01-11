@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Forms</title>    
+    <header style="font-size: 14pt; color:white; background-color: black; text-align: center;display:inline">HTML Forms</header>
+    <hr><div id="logger"></div>
+</head>
+<script>
+    var logg = document.getElementById("logger");
+    
+    clientSideFormProcessor = () => {
+        let formHandle = document.forms["userProfileForm"];
+        logg.innerHTML=
+        `LOGGER: First Name ${formHandle.firstName.value}
+        <br>Password : ${formHandle.mypassword.value}`;
+
+        //password validation
+        if(formHandle.mypassword.value.length<8){
+            formHandle.mypassword.style=" background-color:red";
+        }
+
+        //radio button validation
+        logg.innerText= logg.innerText+ 
+       ` <br>your music choice is ${formHandle.music.value}`;
+       //checkbox
+       let allmusicselected="";
+       alert("No of checkboxes ticked" +formHandle.musicB.length);
+       for(let i=0;i<formHandle.musicB.length; i++){
+           if(formHandle.musicB[i].checked){
+                //alert("you ticked" +formHandle.musicB[i].value);
+                musicB=musicB+" "+formHandle.musicB[i].value;
+           }
+       };
+       //drop down
+       let allfruitselected=" ";
+       for(let i=0; i<formHandle.fruits.length; i++){
+        //alert("you selected" +formHandle.fruits[i].value);
+        formHandle.fruits[i].style="color:yellow";
+        allfruitselected= allfruitselected +" "+formHandle.fruits[i].value;
+       }
+       logg.innerHTML=logg.innerHTML +`<br>fruits: ${fromHandle.fruits.value}`;
+
+       //textarea proccesing
+       logg.innerHTML= logg.innerHTML + `<br>About me:${formHandle.aboutTA.value}`;
+       if(formHandle.aboutTA.value.contain("bad people")!=-1){
+           formHandle.aboutTA.style="color:red";
+       }
+
+       //if we r satisfied with form ,time submit to backend
+       alert("form details validate and looking good. will submitto the");
+
+       formHandle.submit();
+    }
+
+
+</script>
+<body>
+    <hr><br>
+
+    <form name="userProfileForm" action="form-processor.py" method="POST" >
+        <br>First name:  <input type=text name="firstName">
+       <br>Password:  <input type=password name="mypassword" >
+       <br><br>
+       which one is your favorite music?</br>
+       <input type="radio" name="music" value="meditation" checked="checked">meditation</br>
+       <input type="radio" name="music" value="western" checked="checked">western</br>
+       <input type="radio" name="music" value="romantic" checked="checked">romantic</br>
+       <input type="radio" name="music" value="classic" checked="checked">classic</br>
+      
+       <br><br>
+       which one is your favorite music?</br>
+       <input type="checkbox" name="musicB" value="meditation" checked="checked">meditation</br>
+       <input type="checkbox" name="musicB" value="western" checked="checked">western</br>
+       <input type="checkbox" name="musicB" value="romantic" checked="checked">romantic</br>
+       <input type="checkbox" name="musicB" value="classic" checked="checked">classic</br>
+
+       <br><br>selected your favorite fruit:
+       <select name="fruits" multiple>
+       <option value="apple">apple</option>
+       <option value="banana">banana</option>
+       <option value="orange">orange</option>
+       </select>
+
+       <br>textarea:  <input type=textarea name="textarea" style="width:200; height:200">
+
+
+        
+       <br><br>
+       <input type="submit" onclick="clientSideFormProcessor(); return false;">
+    </form>
+
+    
+    
+</body>
+</html>

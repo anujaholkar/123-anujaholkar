@@ -1,0 +1,35 @@
+<DOCTYPE html>
+<html>
+
+    <script>
+        var text= document
+        .getElementById("inputField").value;
+
+        var numWords=0;
+        for(var i=0; i<text.length; i++){
+            var currentCharacter =text[i];
+            if(currentCharacter ==""){
+                numWords =1;
+            }
+        }
+        numWords =1;
+        document.getElementById("show")
+        .innerHTML =numWords;
+    </script>
+
+<body style="text-align:center;">
+    <h1 style="color:green"></h1>
+    
+    <p>Type in the textbox and click on button</p>
+    
+    <textarea id="inputField" rows=5 clos="10"></textarea>
+    </br></br>
+    
+    <button onclick="NumberOfLetters()">Number of letters</button>
+    </br>
+    
+    <p> letters counts: <span id="show">0</span>
+    
+
+</body>
+</html>

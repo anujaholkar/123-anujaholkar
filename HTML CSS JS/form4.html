@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOTEL Forms</title>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+    <header style="font-size: 14pt; color:white; background-color: black; text-align: center;display:inline">HOTEL Forms</header>
+    <hr><div id="logger"></div>
+</head>
+<script>
+    var logg = document.getElementById("logger");
+    
+    clientSideFormProcessor = () => {
+        let formHandle = document.forms["ProfileForm"];
+        logg.innerHTML=
+        `LOGGER: First Name ${formHandle.firstName.value}
+        LOGGER:last name ${formHandle.lastName.value}
+        <br>Password : ${formHandle.mypassword.value}`;
+    }
+        //password validation
+        if(formHandle.mypassword.value.length<8){
+            $("#mypassword").style("background-color:red");
+     // formHandle.mypassword.style=" background-color:red";
+        }
+        
+        //radio button validation
+        logg.innerText= logg.innerText+ 
+       ` <br>your music choice is ${formHandle.music.value}`;
+
+       //checkbox
+       let allfacilityselected="";
+       alert("No of checkboxes ticked" +formHandle.facility.length);
+       for(let i=0;i<formHandle.facility.length; i++){
+           if(formHandle.facility[i].checked){
+                //alert("you ticked" +formHandle.musicB[i].value);
+                facility=facility+" "+formHandle.facility[i].value;
+           }
+       };
+       //drop down
+       let allidselected=" ";
+       for(let i=0; i<formHandle.id.length; i++){
+        //alert("you selected" +formHandle.id[i].value);
+        formHandle.id[i].style="color:yellow";
+        allidselected= allidselected +" "+formHandle.id[i].value;
+       }
+       logg.innerHTML=logg.innerHTML +`<br>id: ${fromHandle.id.value}`;
+
+       //textarea proccesing
+       logg.innerHTML= logg.innerHTML + `<br>About me:${formHandle.aboutTA.value}`;
+       if(formHandle.aboutTA.value.contain("bad people")!=-1){
+           formHandle.aboutTA.style="color:red";
+       }
+
+       //if we r satisfied with form ,time submit to backend
+       alert("form details validate and looking good. will submitto the");
+
+       formHandle.submit();
+    
+
+
+</script>
+<body>
+    <hr><br>
+
+    <form name="ProfileForm" action="form-processor.py" method="POST" >
+        
+        <br>First name:  <input type=text name="firstName">
+        <br>last name: <input type=text name="lastname">
+       <br>Password:  <input type=password name="mypassword" id="mypassword">
+       
+       <br><br>
+       </br>facilities:<br>
+       <input type="radio" name="facility" value="Cab" >Cab</br>
+       <input type="radio" name="facility" value="dining-area" >Dining-area</br>
+       <input type="radio" name="facility" value="swimming-pool" >Swimming-pool</br>
+       <input type="radio" name="facility" value="game-zone" >Game-zone</br>
+      
+       <br><br>
+        our  music collection, choose your favorite music?</br>
+       <input type="checkbox" name="musicB" value="meditation">Meditation</br>
+       <input type="checkbox" name="musicB" value="western" >Western</br>
+       <input type="checkbox" name="musicB" value="romantic" >Romantic</br>
+       <input type="checkbox" name="musicB" value="classic">Classic</br>
+
+       <br><br>selected your id:
+       <select name="id's" multiple>
+       <option value="pan-card">Pan-card</option>
+       <option value="aadhar-card">Aadhar-card</option>
+       <option value="voting-card">Voting-card</option>
+       </select>
+
+       <br>textarea:  <input type=textarea name="textarea" style="width:200; height:200">
+
+
+        
+       <br><br>
+       <input type="submit" onclick="clientSideFormProcessor(); return false;">
+    </form>
+
+    
+    
+</body>
+</html>

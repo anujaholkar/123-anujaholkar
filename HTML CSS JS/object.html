@@ -1,0 +1,41 @@
+<! DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>object Destructuring</title>
+    </head>
+    <script>
+        var str= "Hello"; //str holds a string literal
+        var car1= {
+            price:1000,
+            color:"red",
+            weight:100
+        }; //car1 is an object literal
+
+        function displayDetails(c){
+        document.write(`<hr>DisplayDetails</br> price of car is ${c.price} and weight ${c.weight}`);
+        };
+
+        displayDetails(car1);
+
+        function displayDetails2(p,w){
+        document.write(`<hr>In displayDetails2</br> price of car is ${p} and weight ${w}`);
+        };
+
+        displayDetails2(car1.price, car1.weight);
+
+        function displayDetailsES62(car){
+            var {price}=car;
+            document.write(`<hr>In displayDetailsES62</br> price of car is ${price}`);
+            car.weight=200000;
+            var {weight} =car;
+            document.write(`<hr>In displayDetailsES62</br> weight of car is ${weight}`);
+        }
+        displayDetailsES62(car1);
+    </script>
+
+<body>
+    <header style="font-size:24pt; color:white; background-color:black; text-align:center;">object-destructuring operator</header>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+        <SCRIPT>
+            var answer = 42;
+            console.log("value of my answer variable" + answer);
+
+            someVar="Hello javascript";
+            console.log(someVar);
+
+            myArray=new Array(4); //array declaration
+            myArray[0]=100;
+            myArray[1]=12.3;
+            myArray[2]=false;
+            myArray[3]="Hello";
+            myArray[4]="fifth";
+
+            //observation: arrayin js hold mix of datatype.
+            //array can grow in js.
+             myArray.splice(2,1); //remove particular index
+            console.log("Length of after deleting:" +myArray.length);
+
+            myArray2=[1,42,true,true,"hello"];
+            console.log(myArray2);
+             
+            document.write(myArray2);
+
+            var var1 = 10;
+            var var2 = 24;
+
+            if(var1==var2){
+                document.write("<br/> values are equals");
+            }else{
+                document.write("<br/> value are not equal");
+            }
+
+
+            if(var1===var2){
+                document.write("<br/> === equal message");
+            }else{
+                document.write("<br/> === not equal message2");
+            }
+
+            //for demo
+            document.write("<br/> for demo");
+            var n=0;
+            for(var i=0; i<3; i++){
+                n +=i;
+                document.write("&nbps;"+i);
+            }
+
+            //while demo
+            document.write("<br/> while demo<br/>");
+            var n=0;
+            var x=0;
+            do{
+                n++;
+                x+=n;
+                document.write("&nbps; The value of n is:" + n + "The value of n is")
+
+            }while(n<3);
+
+            //switch demo
+var day="FRI";
+switch(day){
+    case "MON":document.write("<br/>case 0<br/>");break;
+    case "FRI":document.write("<br/>case 1<br/>");break;
+    case "SAT":document.write("<br/>case 2<br/>");break;
+    case "SUN":document.write("<br/>case 3<br/>");break;
+    default: document.write("<br/>default<br/>");
+}
+
+//function demo
+function popupalert(){
+    alert("This is an alert box." + x.length);
+    
+};
+popupalert(5);
+popupalert();
+
+
+function car(){
+    var price;{
+       
+
+    }
+
+    display: {
+        alert('cars price is' +price);
+    }
+
+};
+var c1 = new car();
+c1.price=100;
+c1.display();
+
+
+var c2 = {
+    price:100,
+    color:"blue",
+
+    display2:function d(){
+        document.write('</br>c2 objects price is ' +this.price);
+        document.write('c2 objects color is ' +this.price);
+        
+    }
+};
+
+c2.display2();
+
+c2.price=100000023;
+c2.color="red";
+c2.display2();
+
+//ES6 onword only
+document.write("<hr>creating classes and object of the class<hr>");
+class Bus{
+    constructor(price){
+        this.price=price;
+    }
+    //construstr(price,color){
+      //  this.price=price;
+      //  this.color=color;
+   //}
+   display=function(){
+       document.write('</br>c2 objects price is'+this.price);
+       document.write('</br>c2 objects color is'+this.color);
+   }
+
+   setPrice=function(x){
+       this.price=x
+   }
+   applyDiscount = function(percentage){
+       this.price=this.price-(this.price*percentage/100);
+   }
+   };
+
+
+var bus1 = new Bus();
+document.write("</br>bus1 price is"+bus1);
+bus1.display();
+bus1.setPrice(25000);
+bus1.display();
+bus1.applyDiscount(50);
+bus1.display();
+
+var bus1 = new Bus(10578);
+document.write("</br>bus1 price is"+bus1.price);
+
+var bus2 = new Bus(10578,red);
+document.write("</br>bus2 price is"+bus1.price+"and color is"+bus2.color);
+
+//oop
+class LuxuryBus extends Bus{
+
+    constructor(price,color,withAC){
+       // super(price, color);
+       this.withAC = price;
+       this.withAC = color;
+        this.withAC = withAC;
+    }
+    display=function(){
+        //super.display();
+        document.write('</br>objects price is 20000'+this.price);
+        document.write('</br>objects cplor is 20000'+this.color);
+        document.write('</br>objects withACis 20000'+this.withAC);
+    }
+};
+
+var lBus1 = new LuxuruBus(20000,"purple",true);
+lBus.display();
+
+        </SCRIPT>
+    </HEAD>
+    <BODY>
+        
+        <SCRIPT>
+
+        </SCRIPT>
+    </BODY>
+
+</HTML>
